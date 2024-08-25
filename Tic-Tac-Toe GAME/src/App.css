@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@900&display=swap');
+
+/* Reset and box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background-image: url('https://img.freepik.com/premium-vector/empty-black-color-studio-room-background-can-use-background-product-display_322958-1951.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.status{
+  font-family: "Merienda",normal;
+  color:aliceblue;
+}
+
+/* Flexbox container for the board and score */
+.box {
+  width: 100%;
+  max-width: 400px;
+  /* Limit max-width for larger screens */
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.player-stats {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  color: aliceblue;
+}
+
+/* Player score display */
+.player-x,
+.player-o {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Grid layout for the Tic-Tac-Toe board */
+.board-row {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  grid-template-rows: repeat(3, 2fr);
+  gap: 2px;
+  /* Gap between squares */
+  /* padding: 10px; */
+}
+
+.square {
+  width: 95px;
+  height: 95px;
+  background-color: rgba(211, 211, 211, 0);
+  border: 1px solid #999;
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.square:hover {
+  background-color: rgba(219, 219, 219, 0);
+}
+
+/* Winning cell style */
+.winning-cell {
+  color: green;
+  position: relative;
+  background-color: aquamarine;
+}
+
+
+/* Restart button */
+.restart {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.restart button{
+   background-color: rgba(0, 0, 0, 0.136);
+   color: #ffffff;
+   font-weight: bold;
+   border: 2px solid white;
+   font-style: italic;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+  .player-x,
+  .player-o {
+    font-size: 1.2rem;
+  }
+
+  .square {
+    height: 80px;
+    font-size: 1.5rem;
+  }
+
+  .restart {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .box {
+    max-width: 100%;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .board-row {
+    gap: 3px;
+  }
+
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+  }
+
+  .restart {
+    margin-top: 50px;
+  }
+}
