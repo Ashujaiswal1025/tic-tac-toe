@@ -4,7 +4,7 @@ import WinTone from './tone/winTone.wav';
 import clickTone from './tone/clickTone.wav'
 import './App.css'
 
-export default function Board() {
+export default function Board(){
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [WinCounterX, setCountX] = useState(0)
   const [WinCounterO, setCountO] = useState(0)
@@ -42,7 +42,7 @@ export default function Board() {
   }
 
   function handleClick(index) {
-    if (squares[index]) {
+    if (squares[index] || winningLine || isDraw) {
       return;
     }
     const newSquares = squares.slice();
@@ -115,3 +115,4 @@ export default function Board() {
     </>
   );
 }
+
